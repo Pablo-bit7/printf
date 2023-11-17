@@ -7,17 +7,18 @@
  *
  * Return: Number of characters printed
  */
-int _print_hex(unsigned int n, int uppercase) {
-    int count;
+int _print_hex(unsigned int n, int uppercase)
+{
+	int count;
 
-    count = 0;
-    if (n >= 16)
-        count += _print_hex(n / 16, uppercase);
-    if (n % 16 < 10)
-        count += _putchar((n % 16) + '0');
-    else
-        count += _putchar((n % 16) - 10 + (uppercase ? 'A' : 'a'));
-    return count;
+	count = 0;
+	if (n >= 16)
+		count += _print_hex(n / 16, uppercase);
+	if (n % 16 < 10)
+		count += _putchar((n % 16) + '0');
+	else
+		count += _putchar((n % 16) - 10 + (uppercase ? 'A' : 'a'));
+	return (count);
 }
 
 /**
@@ -26,16 +27,18 @@ int _print_hex(unsigned int n, int uppercase) {
  *
  * Return: Number of characters printed
  */
-int _print_rev_str(char *str) {
-    int count, len, i;
+int _print_rev_str(char *str)
+{
+	int count, len, i;
 
-    count = 0;
-    if (str != NULL) {
-        len = 0;
-        while (str[len] != '\0')
-            len++;
-        for (i = len - 1; i >= 0; i--)
-            count += _putchar(str[i]);
-    }
-    return count;
+	count = 0;
+	if (str != NULL)
+	{
+		len = 0;
+		while (str[len] != '\0')
+			len++;
+		for (i = len - 1; i >= 0; i--)
+			count += _putchar(str[i]);
+	}
+	return (count);
 }
